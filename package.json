@@ -1,13 +1,18 @@
 {
-  "name": "brain-games",
+  "name": "BGFJ",
   "version": "1.0.0",
   "description": "training project #1",
   "main": "index.js",
   "bin": {
-    "Welcome to the Brain Games!": "./brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline"
+    "prepublishOnly": "npm run build"
   },
   "author": "FluffyJose",
   "license": "ISC",
