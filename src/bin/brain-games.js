@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-console.log('Welcome to the Brain Games!');
 import {userName} from '..';
-console.log('Hi ' + userName + '!');
+console.log(`Hi, ${userName}!`);
