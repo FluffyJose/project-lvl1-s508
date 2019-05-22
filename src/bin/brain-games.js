@@ -2,4 +2,4 @@
 console.log('Welcome to the Brain Games!');
 import {userName} from '..';
 userName();
-console.log(`Hello, ${userName}!`);
+console.log('Hi ' + userName + '!');
