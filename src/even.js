@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if number even otherwise answer "no".');
+console.log('Answer "yes" if number even, otherwise answer "no".');
 
 const userName = readlineSync.question('May i have your name? ');
-console.log(`Hi, ${userName}!`);
+console.log(`Hello, ${userName}!`);
 
 const getRandomInt = () => (Math.floor(Math.random() * (100 + 100)) - 100);
 
@@ -20,12 +20,12 @@ const brainEven = () => {
       console.log('Correct!');
       successAttemptCounter += 1;
       if (successAttemptCounter === 4) {
-        console.log(`Congratulations, ${userName}`);
+        console.log(`Congratulations, ${userName}!`);
         return;
       }
     }
     if (isEven !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven}'. Let's try again, ${userName}!`);
       return;
     }
   }
