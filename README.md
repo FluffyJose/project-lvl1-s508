@@ -8,4 +8,4 @@ Author: FluffyJose
 
 [![Build Status](https://travis-ci.org/FluffyJose/project-lvl1-s508.svg?branch=master)](https://travis-ci.org/FluffyJose/project-lvl1-s508)
 
-[![asciicast](https://asciinema.org/a/uPoW7qkSNII4kxSDAfKUIXzyD.svg)](https://asciinema.org/a/uPoW7qkSNII4kxSDAfKUIXzyD)
+<script id="asciicast-uPoW7qkSNII4kxSDAfKUIXzyD" src="https://asciinema.org/a/uPoW7qkSNII4kxSDAfKUIXzyD.js" async></script>
