@@ -4,7 +4,7 @@ import {
 
 greeting();
 console.log('What is the result of the expression?');
-const userName = answer('May i have your name? ');
+const userName = answer('May i have your name?');
 console.log(`Hello, ${userName}!`);
 
 const brainCalc = () => {
@@ -33,7 +33,7 @@ const brainCalc = () => {
       default: resultOfExpression = firstOperand * secondOperand;
     }
     // console.log(result);
-    const userAnswer = answer('Your answer: ');
+    const userAnswer = answer('Your answer');
     if (Number(userAnswer) === resultOfExpression) {
       console.log('Correct!');
       attemptCounter += 1;
@@ -49,4 +49,4 @@ const brainCalc = () => {
   }
 };
 
-brainCalc();
+export default brainCalc;
