@@ -13,3 +13,6 @@ Game "Brain-even"
 
 Game "Brain-calc"
 <a href="https://asciinema.org/a/nFRkk4d5rMBOiT3KJUIOGem5T" target="_blank"><img src="https://asciinema.org/a/nFRkk4d5rMBOiT3KJUIOGem5T.svg" /></a>
+
+Game "Brain-gcd"
+<a href="https://asciinema.org/a/Yw4w4tcnqxxuOPgEHOiYsrM40" target="_blank"><img src="https://asciinema.org/a/Yw4w4tcnqxxuOPgEHOiYsrM40.svg" /></a>
