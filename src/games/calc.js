@@ -43,7 +43,7 @@ const brainCalc = () => {
       }
     }
     if (Number(userAnswer) !== resultOfExpression) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${resultOfExpression}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${resultOfExpression}'\n Let's try again, ${userName}`);
       return;
     }
   }
