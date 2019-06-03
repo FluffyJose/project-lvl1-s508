@@ -15,7 +15,6 @@ const brainEven = () => {
     const isEven = randomInt % 2 === 0 ? 'yes' : 'no';
     console.log(`Question: ${randomInt}`);
     const answer = readlineSync.question('Your answer: ');
-    // const wrongAnswer = answer === 'yes' ? 'no' : 'yes';
     if (isEven === answer) {
       console.log('Correct!');
       successAttemptCounter += 1;
