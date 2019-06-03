@@ -16,9 +16,9 @@ export const getRandomOperator = () => {
   return operatorsToString[operatorNumber];
 };
 
-// returns a random integer number in the range from 0 to 10
+// returns a random integer number in the range from lower value to upper value
 export const getRandomInt = () => {
   const lowerValue = 0;
-  const upperValue = 11;
+  const upperValue = 100;
   return (Math.floor(Math.random() * (upperValue - lowerValue)) + lowerValue);
 };
