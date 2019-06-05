@@ -16,7 +16,11 @@ const brainGcd = () => {
     const secondOperand = getRandomInt();
 
     console.log(`Question: ${firstOperand} ${secondOperand}`);
-    const getGcd = (x, y) => x ? getGcd(y % x, x) : y;
+    const getGcd = (x, y) => {
+      const firstNumber = x;
+      const secondNumber = y;
+      return firstNumber ? getGcd(secondNumber % firstNumber, firstNumber) : secondNumber;
+    };
     const result = getGcd(firstOperand, secondOperand);
 
     const userAnswer = answer('Your answer');
@@ -36,10 +40,3 @@ const brainGcd = () => {
 };
 
 export default brainGcd;
-
-/*
-const gcd = (x, y) => {
-  while (y !== 0) y = x % (x = y);
-  return x;
-}
-*/
