@@ -26,3 +26,7 @@ Game "Brain-gcd"
 Game "Brain-progression"
 
 <a href="https://asciinema.org/a/tHqRbr83KNFSRmSgtRgdTeVkY" target="_blank"><img src="https://asciinema.org/a/tHqRbr83KNFSRmSgtRgdTeVkY.svg" /></a>
+
+Game "Brain-prime"
+
+<a href="https://asciinema.org/a/gHnKshE9HY749x38JeFG6z6cx" target="_blank"><img src="https://asciinema.org/a/gHnKshE9HY749x38JeFG6z6cx.svg" /></a>
