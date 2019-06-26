@@ -2,7 +2,6 @@
   "name": "fluffybrain-games",
   "version": "1.1.5",
   "description": "training project #1",
-  "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -19,6 +18,10 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
+  "keywords": [
+    "logic game",
+    "console game"
+  ],
   "author": "FluffyJose",
   "license": "ISC",
   "devDependencies": {

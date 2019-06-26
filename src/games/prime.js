@@ -12,7 +12,7 @@ const brainPrime = () => {
   const succesAttempts = 3;
 
   while (attemptCounter < succesAttempts) {
-    const isPrime = getRandomInt();
+    const isPrime = getRandomInt(1, 20);
     console.log(`Question: ${isPrime}`);
     const getPrime = (num) => {
       let prime = num !== 1;

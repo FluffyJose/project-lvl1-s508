@@ -12,8 +12,8 @@ const brainGcd = () => {
   const succesAttempts = 3;
 
   while (attemptCounter < succesAttempts) {
-    const firstOperand = getRandomInt();
-    const secondOperand = getRandomInt();
+    const firstOperand = getRandomInt(1, 20);
+    const secondOperand = getRandomInt(1, 20);
 
     console.log(`Question: ${firstOperand} ${secondOperand}`);
     const getGcd = (x, y) => {
