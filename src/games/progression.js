@@ -12,7 +12,7 @@ const brainProgression = () => {
   const succesAttempts = 3;
   while (attemptCounter < succesAttempts) {
     const firstElement = getRandomInt(1, 10);
-    const progressionDiff = getRandomInt();
+    const progressionDiff = getRandomInt(1, 10);
     const elementsAmount = 10;
     const hiddenElementPosition = getRandomInt(1, 10);
     const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;

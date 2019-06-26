@@ -15,11 +15,8 @@ const brainCalc = () => {
     getRandomOperator();
 
     const randomOperator = getRandomOperator();
-
-    getRandomInt();
-
-    const firstOperand = getRandomInt();
-    const secondOperand = getRandomInt();
+    const firstOperand = getRandomInt(0, 10);
+    const secondOperand = getRandomInt(0, 10);
 
     console.log(`Question: ${firstOperand} ${randomOperator} ${secondOperand}`);
     let resultOfExpression = 0;
@@ -32,7 +29,6 @@ const brainCalc = () => {
 
       default: resultOfExpression = firstOperand * secondOperand;
     }
-    // console.log(result);
     const userAnswer = answer('Your answer');
     if (Number(userAnswer) === resultOfExpression) {
       console.log('Correct!');
