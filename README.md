@@ -13,20 +13,20 @@ programm installation:
 
 Game "Brain-even"
 
-<a href="https://asciinema.org/a/uPoW7qkSNII4kxSDAfKUIXzyD" target="_blank"><img src="https://asciinema.org/a/uPoW7qkSNII4kxSDAfKUIXzyD.svg" /></a>
+<a href="https://asciinema.org/a/7pUdyKb0mMFNFCS3e9oJooLLa" target="_blank"><img src="https://asciinema.org/a/7pUdyKb0mMFNFCS3e9oJooLLa.svg" /></a>
 
 Game "Brain-calc"
 
-<a href="https://asciinema.org/a/nFRkk4d5rMBOiT3KJUIOGem5T" target="_blank"><img src="https://asciinema.org/a/nFRkk4d5rMBOiT3KJUIOGem5T.svg" /></a>
+<a href="https://asciinema.org/a/253816" target="_blank"><img src="https://asciinema.org/a/253816.svg" /></a>
 
 Game "Brain-gcd"
 
-<a href="https://asciinema.org/a/Yw4w4tcnqxxuOPgEHOiYsrM40" target="_blank"><img src="https://asciinema.org/a/Yw4w4tcnqxxuOPgEHOiYsrM40.svg" /></a>
+<a href="https://asciinema.org/a/253817" target="_blank"><img src="https://asciinema.org/a/253817.svg" /></a>
 
 Game "Brain-progression"
 
-<a href="https://asciinema.org/a/tHqRbr83KNFSRmSgtRgdTeVkY" target="_blank"><img src="https://asciinema.org/a/tHqRbr83KNFSRmSgtRgdTeVkY.svg" /></a>
+<a href="https://asciinema.org/a/253818" target="_blank"><img src="https://asciinema.org/a/253818.svg" /></a>
 
 Game "Brain-prime"
 
-<a href="https://asciinema.org/a/gHnKshE9HY749x38JeFG6z6cx" target="_blank"><img src="https://asciinema.org/a/gHnKshE9HY749x38JeFG6z6cx.svg" /></a>
+<a href="https://asciinema.org/a/253819" target="_blank"><img src="https://asciinema.org/a/253819.svg" /></a>
