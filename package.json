@@ -19,8 +19,7 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "logic game",
-    "console game"
+    "braingames"    
   ],
   "author": "FluffyJose",
   "license": "ISC",

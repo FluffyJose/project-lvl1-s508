@@ -46,3 +46,12 @@ const brainCalc = () => {
 };
 
 export default brainCalc;
+
+// export const getRandomOperator = () => {
+//   const operatorsToString = '+-*';
+//   const minNumberOfOperators = 0;
+//   const maxNumberOfOperators = operatorsToString.length;
+//   const getOperatorNumber = (min, max) => (Math.floor(Math.random() * (max - min)) + min);
+//   const operatorNumber = getOperatorNumber(minNumberOfOperators, maxNumberOfOperators);
+//   return operatorsToString[operatorNumber];
+// };
