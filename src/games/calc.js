@@ -1,57 +1,34 @@
-import {
-  answer, greeting, getRandomOperator, getRandomInt,
-} from '../index';
+import { cons } from 'hexlet-pairs';
+import gameLauncher, { getRandomInt } from '../index';
 
-greeting();
-console.log('What is the result of the expression?');
-const userName = answer('May i have your name?');
-console.log(`Hello, ${userName}!`);
+const gameRules = 'What is the result of the expression?';
+const getRandomOperator = () => {
+  const operatorsToString = '+-*';
+  const minNumberOfOperators = 0;
+  const maxNumberOfOperators = operatorsToString.length;
+  const operatorNumber = getRandomInt(minNumberOfOperators, maxNumberOfOperators);
+  return operatorsToString[operatorNumber];
+};
+const question = () => {
+  const randomOperator = getRandomOperator();
+  const firstOperand = getRandomInt(0, 10);
+  const secondOperand = getRandomInt(0, 10);
 
-const brainCalc = () => {
-  let attemptCounter = 0;
-  const succesAttempts = 3;
+  const expression = (`${firstOperand} ${randomOperator} ${secondOperand}`);
+  let resultOfExpression = 0;
+  switch (randomOperator) {
+    case '+': resultOfExpression = firstOperand + secondOperand;
+      break;
 
-  while (attemptCounter < succesAttempts) {
-    getRandomOperator();
+    case '-': resultOfExpression = firstOperand - secondOperand;
+      break;
 
-    const randomOperator = getRandomOperator();
-    const firstOperand = getRandomInt(0, 10);
-    const secondOperand = getRandomInt(0, 10);
-
-    console.log(`Question: ${firstOperand} ${randomOperator} ${secondOperand}`);
-    let resultOfExpression = 0;
-    switch (randomOperator) {
-      case '+': resultOfExpression = firstOperand + secondOperand;
-        break;
-
-      case '-': resultOfExpression = firstOperand - secondOperand;
-        break;
-
-      default: resultOfExpression = firstOperand * secondOperand;
-    }
-    const userAnswer = answer('Your answer');
-    if (Number(userAnswer) === resultOfExpression) {
-      console.log('Correct!');
-      attemptCounter += 1;
-      if (attemptCounter === succesAttempts) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
-    }
-    if (Number(userAnswer) !== resultOfExpression) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${resultOfExpression}'.\n Let's try again, ${userName}`);
-      return;
-    }
+    default: resultOfExpression = firstOperand * secondOperand;
   }
+  const resultToString = String(resultOfExpression);
+  return cons(expression, resultToString);
 };
 
-export default brainCalc;
+const brainCalc = () => gameLauncher(gameRules, question);
 
-// export const getRandomOperator = () => {
-//   const operatorsToString = '+-*';
-//   const minNumberOfOperators = 0;
-//   const maxNumberOfOperators = operatorsToString.length;
-//   const getOperatorNumber = (min, max) => (Math.floor(Math.random() * (max - min)) + min);
-//   const operatorNumber = getOperatorNumber(minNumberOfOperators, maxNumberOfOperators);
-//   return operatorsToString[operatorNumber];
-// };
+export default brainCalc;

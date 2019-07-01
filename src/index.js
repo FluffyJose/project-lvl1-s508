@@ -20,9 +20,9 @@ const gameLauncher = (rules, game) => {
   let successAttemptCounter = 0;
   while (successAttemptCounter <= succesAttempts) {
     const round = game();
-    const number = car(round);
+    const numberOrExpression = car(round);
     const correctAnswer = cdr(round);
-    console.log(`Question: ${number}`);
+    console.log(`Question: ${numberOrExpression}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
       console.log('Correct!');

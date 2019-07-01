@@ -1,42 +1,21 @@
-import {
-  answer, greeting, getRandomInt,
-} from '../index';
+import { cons } from 'hexlet-pairs';
+import gameLauncher, { getRandomInt } from '../index';
 
-greeting();
-console.log('Find the greatest common divisor of given numbers.');
-const userName = answer('May i have your name?');
-console.log(`Hello, ${userName}!`);
+const gameRules = 'Find the greatest common divisor of given numbers.';
 
-const brainGcd = () => {
-  let attemptCounter = 0;
-  const succesAttempts = 3;
-
-  while (attemptCounter < succesAttempts) {
-    const firstOperand = getRandomInt(1, 20);
-    const secondOperand = getRandomInt(1, 20);
-
-    console.log(`Question: ${firstOperand} ${secondOperand}`);
-    const getGcd = (x, y) => {
-      const firstNumber = x;
-      const secondNumber = y;
-      return firstNumber ? getGcd(secondNumber % firstNumber, firstNumber) : secondNumber;
-    };
-    const result = getGcd(firstOperand, secondOperand);
-
-    const userAnswer = answer('Your answer');
-    if (Number(userAnswer) === result) {
-      console.log('Correct!');
-      attemptCounter += 1;
-      if (attemptCounter === succesAttempts) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
-    }
-    if (Number(userAnswer) !== result) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\n Let's try again, ${userName}`);
-      return;
-    }
-  }
+const question = () => {
+  const firstOperand = getRandomInt(1, 20);
+  const secondOperand = getRandomInt(1, 20);
+  const numbers = `${firstOperand}  ${secondOperand}`;
+  const getGcd = (x, y) => {
+    const firstNumber = x;
+    const secondNumber = y;
+    return firstNumber ? getGcd(secondNumber % firstNumber, firstNumber) : secondNumber;
+  };
+  const gcd = String(getGcd(firstOperand, secondOperand));
+  return cons(numbers, gcd);
 };
+
+const brainGcd = () => gameLauncher(gameRules, question);
 
 export default brainGcd;

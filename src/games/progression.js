@@ -1,49 +1,29 @@
-import {
-  answer, greeting, getRandomInt,
-} from '../index';
+import { cons } from 'hexlet-pairs';
+import gameLauncher, { getRandomInt } from '../index';
 
-greeting();
-console.log('What number is missing in the progression?');
-const userName = answer('May i have your name?');
-console.log(`Hello, ${userName}!`);
-
-const brainProgression = () => {
-  let attemptCounter = 0;
-  const succesAttempts = 3;
-  while (attemptCounter < succesAttempts) {
-    const firstElement = getRandomInt(1, 10);
-    const progressionDiff = getRandomInt(1, 10);
-    const elementsAmount = 10;
-    const hiddenElementPosition = getRandomInt(1, 10);
-    const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;
-    let positionCounter = 0;
-    const getProgression = () => {
-      let progression = '';
-      while (positionCounter < elementsAmount) {
-        let nextElement = firstElement + positionCounter * progressionDiff;
-        if (positionCounter === hiddenElementPosition) {
-          nextElement = '..';
-        }
-        progression = `${progression} ${nextElement}`;
-        positionCounter += 1;
+const gameRules = 'What number is missing in the progression?';
+const question = () => {
+  const firstElement = getRandomInt(1, 10);
+  const progressionDiff = getRandomInt(1, 10);
+  const elementsAmount = 10;
+  const hiddenElementPosition = getRandomInt(1, 10);
+  const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;
+  let positionCounter = 0;
+  const getProgression = () => {
+    let progression = '';
+    while (positionCounter < elementsAmount) {
+      let nextElement = firstElement + positionCounter * progressionDiff;
+      if (positionCounter === hiddenElementPosition) {
+        nextElement = '..';
       }
-      return progression;
-    };
-    console.log(`Question: ${getProgression()}`);
-    const userAnswer = answer('Your answer');
-    if (Number(userAnswer) === hiddenElementValue) {
-      console.log('Correct!');
-      attemptCounter += 1;
-      if (attemptCounter === succesAttempts) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
+      progression = `${progression} ${nextElement}`;
+      positionCounter += 1;
     }
-    if (Number(userAnswer) !== hiddenElementValue) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElementValue}'.\n Let's try again, ${userName}`);
-      return;
-    }
-  }
+    return progression;
+  };
+  const progression = getProgression();
+  return cons(progression, String(hiddenElementValue));
 };
 
+const brainProgression = () => gameLauncher(gameRules, question);
 export default brainProgression;
