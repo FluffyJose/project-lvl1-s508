@@ -1,29 +1,29 @@
-import { cons } from 'hexlet-pairs';
-import gameLauncher, { getRandomInt } from '../index';
+import { cons, car, cdr } from 'hexlet-pairs';
+import runGame from '../index';
+import getRandomInt from '../utils';
 
-const gameRules = 'What number is missing in the progression?';
-const question = () => {
+const description = 'What number is missing in the progression?';
+const getProgression = () => {
   const firstElement = getRandomInt(1, 10);
   const progressionDiff = getRandomInt(1, 10);
-  const elementsAmount = 10;
-  const hiddenElementPosition = getRandomInt(1, 10);
+  const progressionLength = 10;
+  const hiddenElementPosition = getRandomInt(1, progressionLength);
   const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;
   let positionCounter = 0;
-  const getProgression = () => {
-    let progression = '';
-    while (positionCounter < elementsAmount) {
-      let nextElement = firstElement + positionCounter * progressionDiff;
-      if (positionCounter === hiddenElementPosition) {
-        nextElement = '..';
-      }
-      progression = `${progression} ${nextElement}`;
-      positionCounter += 1;
+  let progression = '';
+  for (let i = 0; i < progressionLength; i += 1) {
+    let nextElement = firstElement + positionCounter * progressionDiff;
+    if (positionCounter === hiddenElementPosition) {
+      nextElement = '..';
     }
-    return progression;
-  };
+    progression = `${progression} ${nextElement}`;
+    positionCounter += 1;
+  }
+  return cons(progression, hiddenElementValue);
+};
+const getQuestion = () => {
   const progression = getProgression();
-  return cons(progression, String(hiddenElementValue));
+  return cons(car(progression), String(cdr(progression)));
 };
 
-const brainProgression = () => gameLauncher(gameRules, question);
-export default brainProgression;
+export default () => runGame(description, getQuestion);

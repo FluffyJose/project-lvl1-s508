@@ -1,34 +1,30 @@
 import { cons } from 'hexlet-pairs';
-import gameLauncher, { getRandomInt } from '../index';
+import runGame from '../index';
+import getRandomInt from '../utils';
 
-const gameRules = 'What is the result of the expression?';
-const getRandomOperator = () => {
-  const operatorsToString = '+-*';
-  const minNumberOfOperators = 0;
-  const maxNumberOfOperators = operatorsToString.length;
-  const operatorNumber = getRandomInt(minNumberOfOperators, maxNumberOfOperators);
-  return operatorsToString[operatorNumber];
+const description = 'What is the result of the expression?';
+const operators = '+-*';
+const generateOperator = (minimumValie = 0, maximumValue = operators.length) => {
+  const operatorNumber = getRandomInt(minimumValie, maximumValue);
+  return operators[operatorNumber];
 };
-const question = () => {
-  const randomOperator = getRandomOperator();
+const getQuestion = () => {
+  const operator = generateOperator();
   const firstOperand = getRandomInt(0, 10);
   const secondOperand = getRandomInt(0, 10);
 
-  const expression = (`${firstOperand} ${randomOperator} ${secondOperand}`);
-  let resultOfExpression = 0;
-  switch (randomOperator) {
-    case '+': resultOfExpression = firstOperand + secondOperand;
+  const question = `${firstOperand} ${operator} ${secondOperand}`;
+  let correctAnswer = 0;
+  switch (operator) {
+    case '+': correctAnswer = firstOperand + secondOperand;
       break;
-
-    case '-': resultOfExpression = firstOperand - secondOperand;
+    case '-': correctAnswer = firstOperand - secondOperand;
       break;
-
-    default: resultOfExpression = firstOperand * secondOperand;
+    case '*': correctAnswer = firstOperand * secondOperand;
+      break;
+    default: console.log('Unknown operatot!');
   }
-  const resultToString = String(resultOfExpression);
-  return cons(expression, resultToString);
+  return cons(question, String(correctAnswer));
 };
 
-const brainCalc = () => gameLauncher(gameRules, question);
-
-export default brainCalc;
+export default () => runGame(description, getQuestion);
