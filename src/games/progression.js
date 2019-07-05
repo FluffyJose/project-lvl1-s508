@@ -1,13 +1,13 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import runGame from '..';
-import getRandomInt from '../utils';
+import getNumber from '../utils';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 const getProgression = () => {
-  const firstElement = getRandomInt(1, 10);
-  const progressionDiff = getRandomInt(1, 10);
-  const hiddenElementPosition = getRandomInt(1, progressionLength);
+  const firstElement = getNumber(1, 10);
+  const progressionDiff = getNumber(1, 10);
+  const hiddenElementPosition = getNumber(1, progressionLength);
   const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;
   let progression = '';
   for (let i = 0; i < progressionLength; i += 1) {

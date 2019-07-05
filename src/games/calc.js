@@ -1,17 +1,16 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
-import getRandomInt from '../utils';
+import getNumber from '../utils';
 
 const description = 'What is the result of the expression?';
 const operators = '+-*';
-const generateOperator = (minimumValie = 0, maximumValue = operators.length) => {
-  const operatorPosition = getRandomInt(minimumValie, maximumValue);
-  return operators[operatorPosition];
-};
+const minimumValue = 0;
+const maximumValue = operators.length;
 const getQuestion = () => {
-  const operator = generateOperator();
-  const firstOperand = getRandomInt(0, 10);
-  const secondOperand = getRandomInt(0, 10);
+  const operatorPosition = getNumber(minimumValue, maximumValue);
+  const operator = operators[operatorPosition];
+  const firstOperand = getNumber(0, 10);
+  const secondOperand = getNumber(0, 10);
 
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   let correctAnswer = 0;
@@ -22,7 +21,7 @@ const getQuestion = () => {
       break;
     case '*': correctAnswer = firstOperand * secondOperand;
       break;
-    default: console.log('Unknown operatot!');
+    default:
   }
   return cons(question, String(correctAnswer));
 };
