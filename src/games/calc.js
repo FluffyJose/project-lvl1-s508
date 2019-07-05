@@ -1,12 +1,12 @@
 import { cons } from 'hexlet-pairs';
-import runGame from '../index';
+import runGame from '..';
 import getRandomInt from '../utils';
 
 const description = 'What is the result of the expression?';
 const operators = '+-*';
 const generateOperator = (minimumValie = 0, maximumValue = operators.length) => {
-  const operatorNumber = getRandomInt(minimumValie, maximumValue);
-  return operators[operatorNumber];
+  const operatorPosition = getRandomInt(minimumValie, maximumValue);
+  return operators[operatorPosition];
 };
 const getQuestion = () => {
   const operator = generateOperator();
