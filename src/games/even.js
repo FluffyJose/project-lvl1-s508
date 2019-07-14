@@ -1,12 +1,12 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
-import getNumber from '../utils';
+import getRandomInt from '../utils';
 
 const description = 'Answer "yes" if number even, otherwise answer "no".';
 const isEven = number => number % 2 === 0;
-const getQuestion = () => {
-  const randomInt = getNumber(1, 10);
-  const correctAnswer = isEven(randomInt) ? 'yes' : 'no';
-  return cons(randomInt, correctAnswer);
+const getQuestionAndAnswer = () => {
+  const randomInt = getRandomInt(1, 4);
+  const answer = isEven(randomInt) ? 'yes' : 'no';
+  return cons(randomInt, answer);
 };
-export default () => runGame(description, getQuestion);
+export default () => runGame(description, getQuestionAndAnswer);

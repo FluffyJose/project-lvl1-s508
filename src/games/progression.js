@@ -1,27 +1,27 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import runGame from '..';
-import getNumber from '../utils';
+import getRandomInt from '../utils';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
-const getProgression = () => {
-  const firstElement = getNumber(1, 10);
-  const progressionDiff = getNumber(1, 10);
-  const hiddenElementPosition = getNumber(1, progressionLength);
-  const hiddenElementValue = firstElement + hiddenElementPosition * progressionDiff;
-  let progression = '';
+const getQuestion = (first, diff, hidden) => {
+  let question = '';
   for (let i = 0; i < progressionLength; i += 1) {
-    let nextElement = firstElement + i * progressionDiff;
-    if (i === hiddenElementPosition) {
+    let nextElement = first + i * diff;
+    if (i === hidden) {
       nextElement = '..';
     }
-    progression = `${progression} ${nextElement}`;
+    question = `${question} ${nextElement}`;
   }
-  return cons(progression, hiddenElementValue);
+  return question;
 };
-const getQuestion = () => {
-  const progression = getProgression();
-  return cons(car(progression), String(cdr(progression)));
+const getQuestionAndAnswer = () => {
+  const firstElement = getRandomInt(1, 10);
+  const progressionDiff = getRandomInt(1, 10);
+  const hiddenElementPosition = getRandomInt(0, progressionLength - 1);
+  const answer = firstElement + hiddenElementPosition * progressionDiff;
+  const question = getQuestion(firstElement, progressionDiff, hiddenElementPosition);
+  return cons(question, String(answer));
 };
 
-export default () => runGame(description, getQuestion);
+export default () => runGame(description, getQuestionAndAnswer);
