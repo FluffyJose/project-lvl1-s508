@@ -1,6 +1,6 @@
 {
   "name": "fluffybrain-games",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "training project #1",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
